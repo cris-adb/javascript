@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("h1").hide(3000);
+            $("h1").show(3000);
+            $(".segundo").text("Alterando texto")
+            $("#terceiro").css("background", "black")
+            $("#terceiro").css("color", "white")
+        });
+    </script>
+</head>
+<body>
+    <h1>Meus testes em JavaScript com jQuery</h1>
+    <h2 class="segundo">Segundo texto</h2>
+    <h3 id="terceiro">Terceiro texto</h3>
+</body>
+</html>
