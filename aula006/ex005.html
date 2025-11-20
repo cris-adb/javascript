@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passsos com DOM</title>
+    <style>
+        body {
+            background: rgb(62, 102, 134);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p id="pa1">Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div>Testando a seleção por tag</div>
+    <div id="msg">Testando a seleção por id</div>
+    <div name="msg2" >Testando a seleção por name</div>
+    <script>
+        var p0 = window.document.getElementsByTagName('p')[0]
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.alert('Está escrito assim:  ' +p0.innerText)
+        window.document.write('Replicando o segundo parágrafo: ' +p1.innerHTML)
+        /* inner text pega o texto sem as filhas, ja o inner html pega o html inteiro inclusive as tags filhas*/
+        /* No exemplo acima selecionei por tag. Se tiver mais que um objeto é interessante dessa forma e selecionar por name já que por estar no plural tenho que selecionar nas chaves qual eu quero [] */
+
+        var d = window.document.getElementById('msg')
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        /* Dessa forma testamos por id, e não é necessário informar qual estamos selecionando ja que id são únicas */
+
+        var e = window.document.getElementsByName('msg2')[0]
+        e.innerText = ('Está escrito assim: ' +e.innerText)
+        /* segue o mesmo princípio depende da necessidade */
+
+        var p0 = window.document.querySelector('p#pa1')
+        p0.style.color = 'blue'
+
+        /* selecionando dessa forma fica mais prático bastando identificar se é id (#) ou class (.) */
+    </script>
+</body>
+</html>
