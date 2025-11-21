@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Digite sua nacionalidade: <input type="text" name="txtnacl" id="txtnacl" placeholder="somente letras" required>
+    <input type="button" value="Verificar" onclick="TextEvent()"> <!--Usamos o onclick como ação para orientar o código ao que fazer -->
+    <div id="res">
+
+    </div>
+    <script>
+        function TextEvent() {
+            var txtnacl = window.document.querySelector('input#txtnacl')
+            var res = window.document.querySelector('div#res')
+            var nac = String(txtnacl.value).trim()
+            res.innerHTML = `<p>Sua nacionalidade é <strong>${nac}</strong></p>`
+            if (nac.toLowerCase() === 'brasileira') {
+                res.innerHTML += `<p>Parabéns por ter nascido no melhor país do mundo, com uma cultura incrível</p>`
+            } else {
+                res.innerHTML += `<p>Desculpa mas você é gringo e não tem o prestígio de ter nascido no melhor país latino!</p>`
+            }
+            res.innerHTML += `<p>Bebam água e não apostem!</p>`
+        }
+    </script>
+</body>
+</html>
