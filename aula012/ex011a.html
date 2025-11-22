@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento militar</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Insira seus dados</h1>
+    <div>
+       <p>Nome completo <input type="text" name="txtnomec" id="txtnomec"></p>
+       <p>Data de nascimento <input type="date" name="txtnasci" id="txtnasci"></p>
+       <p><input type="button" value="Enviar" onclick="TextEvent()"></p>
+    </div>
+    <div id="res"></div>
+
+    <script>
+        function TextEvent() {
+            const txtnomec = document.querySelector('#txtnomec');
+            const txtnasci = document.querySelector('#txtnasci');
+            const res = document.querySelector('#res');
+
+            const nomec = txtnomec.value.trim();
+            const dataNasc = new Date(txtnasci.value);
+            const hoje = new Date();
+
+            if (!txtnasci.value) {
+                res.innerHTML = "Insira sua data de nascimento!";
+                return;
+            }
+
+            // cálculo da idade
+            let idade = hoje.getFullYear() - dataNasc.getFullYear();
+            const mes = hoje.getMonth() - dataNasc.getMonth();
+            if (mes < 0 || (mes === 0 && hoje.getDate() < dataNasc.getDate())) {
+                idade--;
+            }
+
+            res.innerHTML = `${nomec}, você tem ${idade} anos!<br>`;
+
+            if (idade >= 16 && idade <= 18) {
+                res.innerHTML += "Parabéns, você está apto a ser um novo combatente!";
+            } else if (idade < 16) {
+                res.innerHTML += "Aguarde mais alguns anos!";
+            } else {
+                res.innerHTML += "Passou da idade!";
+            }
+        }
+    </script>
+
+</body>
+</html>
