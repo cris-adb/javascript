@@ -1,12 +1,17 @@
 function contar() {
-    var inici = Number(document.querySelector('input#inic').value)
-    var fim = Number(document.querySelector('input#fim').value)
-    var passo = Number(document.querySelector('input#passo').value)
+    let inic = document.querySelector('input#inic')
+    let fim = document.querySelector('input#fim')
+    let passo = document.querySelector('input#passo')
     var res = document.querySelector('div#res')
 
-
-    for (var i = inici; i <= fim; i += passo) {
-        res.innerHTML += `<p> toma o resultado ${i} </p>`
+    if  (inic.value.lenght == 0 || fim.value.lenght == 0 || passo.value.lenght == 0) {
+        window.alert('[ERRO] Faltam dados!')
+    } else {
+        res.innerHTML = 'Contando: '
     }
 
+    for (var i = inic; i <= fim; i += passo) {
+        res.innerHTML += `&#x1F449 ${i}`
+    }
+    
 }
