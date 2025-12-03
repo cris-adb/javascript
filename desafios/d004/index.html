@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <section>
+        <div>
+            <p>Número: <input type="number" name="num" id="txtnum">
+            <input type="button" value="Gerar Tabuada" onclick="tabuada()"></p>
+        </div>
+        <div>
+            <select name="tabuada" id="seltab" size="10">
+                <option>Digite um número acima</option>
+            </select>
+        </div>
+    </section>
+    <header>
+        <h1>Outros Cálculos</h1>
+    </header>
+    <section>
+        <div>
+            <p>Insira o primeiro valor: <input type="number" name="prim" id="txtprim"></p>
+            <p>Escolha a operação: <br>
+                <input type="radio" name="radop" id="isoma" value="+">
+                <label for="isoma">Adição</label>
+                <input type="radio" name="radop" id="isub" value="-">
+                <label for="isub">Subtração</label>
+                <input type="radio" name="radop" id="imulti" value="*">
+                <label for="imulti">Multiplicação</label>
+                <input type="radio" name="radop" id="idiv" value="/">
+                <label for="idiv">Divisão</label>
+            </p>
+            <p>Insira o segundo valor: <input type="number" name="segun" id="txtsegun"></p>
+            <p>
+                <input type="button" value="calcular" onclick="calcular()">
+            </p>
+        </div>
+        <div id="res">
+            <p>O resultado é:</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoEmVideo</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
